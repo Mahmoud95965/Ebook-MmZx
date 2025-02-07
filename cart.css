@@ -1,0 +1,58 @@
+/* الأنماط العامة */
+.payment-option img {
+    width: 40px; /* تعديل العرض */
+    height: 40px; /* تعديل الارتفاع */
+    margin-left: 10px;
+    object-fit: contain; /* لضمان تناسق الصورة داخل الأبعاد المحددة */
+}
+
+/* استعلامات الوسائط للأحجام المختلفة */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .payment-option {
+        font-size: 16px;
+        padding: 12px 16px;
+    }
+
+    .payment-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    .payment-option {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .payment-option img {
+        width: 30px;
+        height: 30px;
+    }
+}

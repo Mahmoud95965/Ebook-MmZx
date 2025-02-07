@@ -1,0 +1,1226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== FAVICON ===============-->
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
+
+    <!--=============== REMIXICONS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"
+    />
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+    emailjs.init('service_tcivf1g'); // استبدل YOUR_USER_ID بمعرفك من EmailJS
+    </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js"></script>
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <title>eBooks | MmZx</title>
+  </head>
+  <body>
+
+    <!--=========Loading Page===========-->
+
+    <div class="loader">
+      <div class="spinner"></div>
+      <p>Loading.....</p>
+  </div>
+
+  <!--==================== SIGNUP ====================-->
+
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="" class="nav__logo"><i class="ri-book-3-line"></i>E-Book | MmZx</a>
+
+        <div class="nav__menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link active_link">
+                <i class="ri-home-line"></i>
+                <span class="Arabic">الصفحة الرئيسية</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#featured" class="nav__link">
+                <i class="ri-book-3-line"></i>
+                <span class="Arabic">مميز</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#discount" class="nav__link">
+                <i class="ri-price-tag-3-line"></i>
+                <span class="Arabic">تخفيض</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#new" class="nav__link">
+                <i class="ri-bookmark-line"></i>
+                <span class="Arabic">كتب جديدة</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#testimonial" class="nav__link">
+                <i class="ri-message-3-line"></i>
+                <span class="Arabic">شهادة</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav__actions">
+          <!-- Search Button -->
+          <i class="ri-search-line" id="search-button"></i>
+
+          <!-- Login Button -->
+          <i class="ri-user-line" id="user-button"></i>
+
+          <!-- Theme Button -->
+          <i class="ri-moon-line" id="theme-button"></i>
+        </div>
+      </nav>
+    </header>
+
+    <!--==================== SEARCH ====================-->
+    <div class="search" id="search-content">
+      <form action="" class="search__form">
+        <i class="ri-search-line search__icon"></i>
+        <input
+          type="search"
+          placeholder="What are you looking for?"
+          class="search__input"
+        />
+      </form>
+
+      <i class="ri-close-line search-clos" id="search-close"></i>
+    </div>
+
+    <!--==================== LOGIN ====================-->
+
+    <div class="login grid" id="login-content">
+      <form action="#" class="login__form grid">
+
+        
+        <div id="user-container"></div>
+        
+     <div class="g_id_signin" data-type="standard"></div>
+
+      </form>
+
+      <i class="ri-close-line login-clos" id="login-close"></i>
+    </div>
+    <!--==================== AUTH FORMS ====================-->
+
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home section" id="home">
+        <div class="home__container container grid">
+          <div class="home__data">
+            <h1 class="home__title">
+تصفح & <br />
+حدد الكتب الإلكترونية
+            </h1>
+            <p class="home__description">
+              ابحث عن أفضل الكتب الإلكترونية لمؤلفيك المفضلين، واستكشف مئات الكتب بجميع الفئات الممكنة، 
+              واستفد من خصم 50% وغير ذلك الكثير.
+            </p>
+            <a href="#" class="button">اكتشف الآن</a>
+          </div>
+
+          <div class="home__images">
+            <div class="home__swiper swiper">
+              <div class="swiper-wrapper">
+                <article class="home__article swiper-slide">
+                  <img
+                    src="assets/img/book-cover.jpg"
+                    alt="image"
+                    class="home__img"
+                  />
+                </article>
+                <article class="home__article swiper-slide">
+                  <img
+                    src="assets/img/book-cover.jpg"
+                    alt="image"
+                    class="home__img"
+                  />
+                </article>
+                <article class="home__article swiper-slide">
+                  <img
+                    src="assets/img/book-cover.jpg"
+                    alt="image"
+                    class="home__img"
+                  />
+                </article>
+                <article class="home__article swiper-slide">
+                  <img
+                    src="assets/img/book-cover.jpg"
+                    alt="image"
+                    class="home__img"
+                  />
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== SERVICES ====================-->
+      <section class="services section">
+        <div class="services__container container grid">
+          <article class="services__card">
+            <i class="ri-truck-line"></i>
+            <h3 class="services__title">ًالشحن مجانا</h3>
+            <p class="services__description">اطلب أكثر من 100 دولار</p>
+          </article>
+          <article class="services__card">
+            <i class="ri-lock-2-line"></i>
+            <h3 class="services__title">الدفع الآمن</h3>
+            <p class="services__description">دفع آمن بنسبة %100</p>
+          </article>
+          <article class="services__card">
+            <i class="ri-customer-service-2-line"></i>
+            <h3 class="services__title">دعم 24/7</h3>
+            <p class="services__description">اتصل بنا في أي وقت</p>
+          </article>
+        </div>
+      </section>
+
+      <!--==================== FEATURED ====================-->
+      <section class="featured section" id="featured">
+        <h2 class="section__title">كتب مميزة</h2>
+
+        <div class="featured__container container">
+          <div class="featured__swiper swiper">
+            <div class="swiper-wrapper">
+              <article class="featured__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+
+                <h2 class="featured__title">كتب مميزة</h2>
+                <div class="featured__prices">
+                  <span class="featured__discount">$11.99</span>
+                  <span class="featured__price">$19.99</span>
+                </div>
+
+                <button class="button"> <a style="color: #fff;" href="cart.html">شراء الان</a> </button>
+
+                <div class="featured__actions">
+                  <button><i class="ri-search-line"></i></button>
+                  <button><i class="ri-heart-3-line"></i></button>
+                  <button><i class="ri-eye-line"></i></button>
+                </div>
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+
+                <h2 class="featured__title">كتب مميزة</h2>
+                <div class="featured__prices">
+                  <span class="featured__discount">$11.99</span>
+                  <span class="featured__price">$19.99</span>
+                </div>
+
+                <button class="button"> <a style="color: #fff;" href="cart.html">شراء الان</a> </button>
+
+                <div class="featured__actions">
+                  <button><i class="ri-search-line"></i></button>
+                  <button><i class="ri-heart-3-line"></i></button>
+                  <button><i class="ri-eye-line"></i></button>
+                </div>
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+
+                <h2 class="featured__title">كتب مميزة</h2>
+                <div class="featured__prices">
+                  <span class="featured__discount">$11.99</span>
+                  <span class="featured__price">$19.99</span>
+                </div>
+
+                <button class="button"> <a style="color: #fff;" href="cart.html">شراء الان</a> </button>
+
+                <div class="featured__actions">
+                  <button><i class="ri-search-line"></i></button>
+                  <button><i class="ri-heart-3-line"></i></button>
+                  <button><i class="ri-eye-line"></i></button>
+                </div>
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+
+                <h2 class="featured__title">كتب مميزة</h2>
+                <div class="featured__prices">
+                  <span class="featured__discount">$11.99</span>
+                  <span class="featured__price">$19.99</span>
+                </div>
+
+                <button class="button"> <a style="color: #fff;" href="cart.html">شراء الان</a> </button>
+
+                <div class="featured__actions">
+                  <button><i class="ri-search-line"></i></button>
+                  <button><i class="ri-heart-3-line"></i></button>
+                  <button><i class="ri-eye-line"></i></button>
+                </div>
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+
+                <h2 class="featured__title">كتب مميزة</h2>
+                <div class="featured__prices">
+                  <span class="featured__discount">$11.99</span>
+                  <span class="featured__price">$19.99</span>
+                </div>
+
+                <button class="button"> <a style="color: #fff;" href="cart.html">شراء الان</a> </button>
+
+                <div class="featured__actions">
+                  <button><i class="ri-search-line"></i></button>
+                  <button><i class="ri-heart-3-line"></i></button>
+                  <button><i class="ri-eye-line"></i></button>
+                </div>
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+
+                <h2 class="featured__title">كتب مميزة</h2>
+                <div class="featured__prices">
+                  <span class="featured__discount">$11.99</span>
+                  <span class="featured__price">$19.99</span>
+                </div>
+
+                <button class="button"> <a style="color: #fff;" href="cart.html">شراء الان</a> </button>
+
+                <div class="featured__actions">
+                  <button><i class="ri-search-line"></i></button>
+                  <button><i class="ri-heart-3-line"></i></button>
+                  <button><i class="ri-eye-line"></i></button>
+                </div>
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+
+                <h2 class="featured__title">كتب مميزة</h2>
+                <div class="featured__prices">
+                  <span class="featured__discount">$11.99</span>
+                  <span class="featured__price">$19.99</span>
+                </div>
+
+                <button class="button"> <a style="color: #fff;" href="cart.html">شراء الان</a> </button>
+
+                <div class="featured__actions">
+                  <button><i class="ri-search-line"></i></button>
+                  <button><i class="ri-heart-3-line"></i></button>
+                  <button><i class="ri-eye-line"></i></button>
+                </div>
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+
+                <h2 class="featured__title">كتب مميزة</h2>
+                <div class="featured__prices">
+                  <span class="featured__discount">$11.99</span>
+                  <span class="featured__price">$19.99</span>
+                </div>
+
+                <button class="button"> <a style="color: #fff;" href="cart.html">شراء الان</a> </button>
+
+                <div class="featured__actions">
+                  <button><i class="ri-search-line"></i></button>
+                  <button><i class="ri-heart-3-line"></i></button>
+                  <button><i class="ri-eye-line"></i></button>
+                </div>
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+
+                <h2 class="featured__title">كتب مميزة</h2>
+                <div class="featured__prices">
+                  <span class="featured__discount">$11.99</span>
+                  <span class="featured__price">$19.99</span>
+                </div>
+
+                <button class="button"> <a style="color: #fff;" href="cart.html">شراء الان</a> </button>
+
+                <div class="featured__actions">
+                  <button><i class="ri-search-line"></i></button>
+                  <button><i class="ri-heart-3-line"></i></button>
+                  <button><i class="ri-eye-line"></i></button>
+                </div>
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+
+                <h2 class="featured__title">كتب مميزة</h2>
+                <div class="featured__prices">
+                  <span class="featured__discount">$11.99</span>
+                  <span class="featured__price">$19.99</span>
+                </div>
+
+                <button class="button"> <a style="color: #fff;" href="cart.html">شراء الان</a> </button>
+
+                <div class="featured__actions">
+                  <button><i class="ri-search-line"></i></button>
+                  <button><i class="ri-heart-3-line"></i></button>
+                  <button><i class="ri-eye-line"></i></button>
+                </div>
+              </article>
+            </div>
+            <div class="swiper-button-prev">
+              <i class="ri-arrow-left-s-line"></i>
+            </div>
+
+            <div class="swiper-button-next">
+              <i class="ri-arrow-right-s-line"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== DISCOUNT ====================-->
+      <section class="discount section" id="discount">
+        <div class="discount__container container grid">
+          <div class="discount__data">
+            <h2 class="discount__title section__title">خصم يصل الي %50</h2>
+
+            <p class="discount__description">
+              استفد من أيام الخصم التي نقدمها لك، وشراء الكتب
+              من كتابك المفضلين، كلما اشتريت أكثر، زادت الخصومات
+              لدينا لك.
+            </p>
+
+            <a href="#" class="button">تسوق الآن</a>
+          </div>
+          <div class="discount__images">
+            <img
+              src="assets/img/book-cover.jpg"
+              alt="image"
+              class="discount__img-1"
+            />
+            <img
+              src="assets/img/book-cover.jpg"
+              alt="image"
+              class="discount__img-2"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!--==================== كتب جديدةS ====================-->
+      <section class="new section" id="new">
+        <h2 class="section__title">كتب جديدة</h2>
+
+        <div class="new__container container">
+          <div class="new__swiper swiper">
+            <div class="swiper-wrapper">
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">كتب جديدة</h2>
+
+                  <div class="new__prices">
+                    <span class="new__discount">$7.99</span>
+                    <span class="new__price">$14.99</span>
+                  </div>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">كتب جديدة</h2>
+
+                  <div class="new__prices">
+                    <span class="new__discount">$7.99</span>
+                    <span class="new__price">$14.99</span>
+                  </div>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">كتب جديدة</h2>
+
+                  <div class="new__prices">
+                    <span class="new__discount">$7.99</span>
+                    <span class="new__price">$14.99</span>
+                  </div>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">كتب جديدة</h2>
+
+                  <div class="new__prices">
+                    <span class="new__discount">$7.99</span>
+                    <span class="new__price">$14.99</span>
+                  </div>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">كتب جديدة</h2>
+
+                  <div class="new__prices">
+                    <span class="new__discount">$7.99</span>
+                    <span class="new__price">$14.99</span>
+                  </div>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">كتب جديدة</h2>
+
+                  <div class="new__prices">
+                    <span class="new__discount">$7.99</span>
+                    <span class="new__price">$14.99</span>
+                  </div>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">كتب جديدة</h2>
+
+                  <div class="new__prices">
+                    <span class="new__discount">$7.99</span>
+                    <span class="new__price">$14.99</span>
+                  </div>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">كتب جديدة</h2>
+
+                  <div class="new__prices">
+                    <span class="new__discount">$7.99</span>
+                    <span class="new__price">$14.99</span>
+                  </div>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">كتب جديدة</h2>
+
+                  <div class="new__prices">
+                    <span class="new__discount">$7.99</span>
+                    <span class="new__price">$14.99</span>
+                  </div>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">كتب جديدة</h2>
+
+                  <div class="new__prices">
+                    <span class="new__discount">$7.99</span>
+                    <span class="new__price">$14.99</span>
+                  </div>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="new__swiper swiper">
+            <div class="swiper-wrapper">
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">كتب جديدة</h2>
+
+                  <div class="new__prices">
+                    <span class="new__discount">$7.99</span>
+                    <span class="new__price">$14.99</span>
+                  </div>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">كتب جديدة</h2>
+
+                  <div class="new__prices">
+                    <span class="new__discount">$7.99</span>
+                    <span class="new__price">$14.99</span>
+                  </div>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">كتب جديدة</h2>
+
+                  <div class="new__prices">
+                    <span class="new__discount">$7.99</span>
+                    <span class="new__price">$14.99</span>
+                  </div>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">كتب جديدة</h2>
+
+                  <div class="new__prices">
+                    <span class="new__discount">$7.99</span>
+                    <span class="new__price">$14.99</span>
+                  </div>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">كتب جديدة</h2>
+
+                  <div class="new__prices">
+                    <span class="new__discount">$7.99</span>
+                    <span class="new__price">$14.99</span>
+                  </div>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">كتب جديدة</h2>
+
+                  <div class="new__prices">
+                    <span class="new__discount">$7.99</span>
+                    <span class="new__price">$14.99</span>
+                  </div>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">كتب جديدة</h2>
+
+                  <div class="new__prices">
+                    <span class="new__discount">$7.99</span>
+                    <span class="new__price">$14.99</span>
+                  </div>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">كتب جديدة</h2>
+
+                  <div class="new__prices">
+                    <span class="new__discount">$7.99</span>
+                    <span class="new__price">$14.99</span>
+                  </div>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">كتب جديدة</h2>
+
+                  <div class="new__prices">
+                    <span class="new__discount">$7.99</span>
+                    <span class="new__price">$14.99</span>
+                  </div>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="assets/img/book-cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">كتب جديدة</h2>
+
+                  <div class="new__prices">
+                    <span class="new__discount">$7.99</span>
+                    <span class="new__price">$14.99</span>
+                  </div>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== JOIN ====================-->
+
+
+      <!--==================== TESTIMONIAL ====================-->
+      <section class="testimonial section" id="testimonial">
+        <h2 class="section__title">آراء العملاء</h2>
+
+        <div class="testimonial__container container">
+          <div class="testimonial__swiper swiper">
+            <div class="swiper-wrapper">
+              <article class="testimonial__card swiper-slide">
+                <img
+                  src="assets/img/profile.jpg"
+                  alt="img"
+                  class="testimonial__img"
+                />
+
+                <h2 class="testimonial__title">Mahmoud_Elkoly</h2>
+                <p class="testimonial__description">
+                  أفضل موقع لشراء الكتب، عملية الشراء سهلة للغاية
+                   ولها خصومات كبيرة
+                </p>
+                <div class="testimonial__stars">
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-half-fill"></i>
+                </div>
+              </article>
+
+              <article class="testimonial__card swiper-slide">
+                <img
+                  src="assets/img/profile.jpg"
+                  alt="img"
+                  class="testimonial__img"
+                />
+
+                <h2 class="testimonial__title">Mahmoud_Elkholy</h2>
+                <p class="testimonial__description">
+                  أفضل موقع لشراء الكتب، عملية الشراء سهلة للغاية
+                  ولها خصومات كبيرة
+                </p>
+                <div class="testimonial__stars">
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-half-fill"></i>
+                </div>
+              </article>
+
+              <article class="testimonial__card swiper-slide">
+                <img
+                  src="assets/img/profile.jpg"
+                  alt="img"
+                  class="testimonial__img"
+                />
+
+                <h2 class="testimonial__title">Mahmoud_Elkholy</h2>
+                <p class="testimonial__description">
+                  أفضل موقع لشراء الكتب، عملية الشراء سهلة للغاية
+                  ولها خصومات كبيرة
+                </p>
+                <div class="testimonial__stars">
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-half-fill"></i>
+                </div>
+              </article>
+
+              <article class="testimonial__card swiper-slide">
+                <img
+                  src="assets/img/profile.jpg"
+                  alt="img"
+                  class="testimonial__img"
+                />
+
+                <h2 class="testimonial__title">Mahmoud_Elkholy</h2>
+                <p class="testimonial__description">
+                  أفضل موقع لشراء الكتب، عملية الشراء سهلة للغاية
+                  ولها خصومات كبيرة
+                </p>
+                <div class="testimonial__stars">
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-half-fill"></i>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+      <div class="footer__container container grid">
+        <div>
+          <a href="#" class="footer__logo">
+            <i class="ri-book-3-line"></i>E-Book | MmZx
+          </a>
+
+          <p class="footer__description">
+            البحث عن الأفضل واستكشافه <br />
+            eBooks من كل ما تبذلونه من <br />
+            الكتاب المفضلين.
+          </p>
+        </div>
+
+        <div class="footer__data grid">
+          <div>
+            <h3 class="footer__title">عنا</h3>
+
+            <ul class="footer__links">
+              <li>
+                <a href="#" class="footer__link">الجوائز</a>
+              </li>
+
+              <li>
+                <a href="#" class="footer__link">الاسئلة الشائعة</a>
+              </li>
+
+              <li>
+                <a href="#" class="footer__link">سياسة الخصوصية</a>
+              </li>
+
+              <li>
+                <a href="#" class="footer__link">الشروط و الخدمات</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer__title">الشركة</h3>
+
+            <ul class="footer__links">
+              <li>
+                <a href="#" class="footer__link">المدونات</a>
+              </li>
+
+              <li>
+                <a href="#" class="footer__link">المجتمع</a>
+              </li>
+
+              <li>
+                <a href="#" class="footer__link">فريقنا</a>
+              </li>
+
+              <li>
+                <a href="#" class="footer__link">مركز المساعدة</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer__title">التواصل</h3>
+
+            <ul class="footer__links">
+              <li>
+                <address class="footer__info">
+                  Av. Hacienda <br>
+                  Lima 4321, Perú 
+                </address>
+              </li>
+
+              <li>
+               <address class="footer__info">
+                  e.book@email.com <br>
+                  0987-654-321 
+               </address>
+             </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer__title">مواقع التواصل الاجتماعي</h3>
+
+            <div class="footer__social">
+               <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+                  <i class="ri-facebook-circle-line"></i>
+               </a>
+
+               <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+                  <i class="ri-instagram-line"></i>
+               </a>
+
+               <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+                  <i class="ri-twitter-x-line"></i>
+               </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="footer__copy">
+         &#169; MmZx جميع الحقوق محفوظة لدي &#169;
+      </span>
+      <span class="footer__copy" style="font-size: 50px;">الموقع قيد التطوير</span>
+    </footer>
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-line"></i>
+    </a>
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="./assets/js/scrollreveal.min.js"></script>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="./assets/js/swiper-bundle.min.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+    <script src="./assets/js/auth.js"></script>
+      <!-- تضمين سكريبت من نوع module -->
+  <script type="module">
+    // استيراد مكتبات Firebase المطلوبة
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+
+    // إعداد تكوين Firebase - استبدل القيم بالقيم الخاصة بمشروعك
+    const firebaseConfig = {
+    apiKey: "AIzaSyAP0CrPZ5hq6QUh78lAaaTTReaBnzbeAWs",
+    authDomain: "test-fbc74.firebaseapp.com",
+    projectId: "test-fbc74",
+    storageBucket: "test-fbc74.firebasestorage.app",
+    messagingSenderId: "1025394054184",
+    appId: "1:1025394054184:web:062f07a7395929305e111d"
+  };
+
+    // تهيئة التطبيق
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // مراقبة حالة تسجيل الدخول
+    onAuthStateChanged(auth, (user) => {
+      const userDataDiv = document.getElementById("user-container");
+      if (user) {
+        // عرض بيانات المستخدم
+        userDataDiv.innerHTML = `
+         ${user.photoURL ? `<img class="user-photo" src="${user.photoURL}" alt="صورة المستخدم" width="10%" margin="20px">`  : ""}
+          <h2 class="user-name">Hello : ${user.displayName || user.email}</h2>
+          <p class="user-email">Email : ${user.email}</p>
+         
+        `;
+      } else {
+        // إذا لم يكن المستخدم مسجلاً للدخول، يعاد توجيهه لصفحة تسجيل الدخول
+        window.location.href = "login.html";
+      }
+    });
+  </script>
+  </body>
+</html>

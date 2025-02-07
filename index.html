@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول والتسجيل</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- إضافة خط Cairo من Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="firebaseauth.js"></script>
+</head>
+<body>
+    <div class="container" id="signup" style="display:none;">
+        <div class="form-header">
+            <h1 class="form-title">تسجيل جديد</h1>
+            <p class="form-subtitle">أهلاً بك! يرجى إدخال بياناتك</p>
+        </div>
+        <form method="post" action="">
+            <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="fName" placeholder="الاسم الأول" required>
+                <label for="fname">الاسم الأول</label>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="lName" placeholder="الاسم الأخير" required>
+                <label for="lName">الاسم الأخير</label>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="rEmail" placeholder="البريد الإلكتروني" required>
+                <label for="rEmail">البريد الإلكتروني</label>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="rPassword" placeholder="كلمة المرور" required>
+                <label for="rPassword">كلمة المرور</label>
+            </div>
+            <button class="btn gradient-btn" id="submitSignUp">تسجيل</button>
+        </form>
+        <div class="divider">
+            <span>أو</span>
+        </div>
+        <div class="social-login">
+            <button class="social-btn google">
+                <i class="fab fa-google"></i>
+                تسجيل عبر جوجل
+            </button>
+            <button class="social-btn facebook">
+                <i class="fab fa-facebook-f"></i>
+                تسجيل عبر فيسبوك
+            </button>
+        </div>
+        <div class="links">
+            <p>هل لديك حساب بالفعل؟</p>
+            <button id="signInButton" class="text-btn">تسجيل الدخول</button>
+        </div>
+    </div>
+
+    <div class="container" id="signIn">
+        <div class="form-header">
+            <h1 class="form-title">تسجيل الدخول</h1>
+            <p class="form-subtitle">مرحباً بعودتك!</p>
+        </div>
+        <form method="post" action="">
+            <div id="signInMessage" class="messageDiv" style="display:none;"></div>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+                <label for="email">البريد الإلكتروني</label>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="كلمة المرور" required>
+                <label for="password">كلمة المرور</label>
+            </div>
+            <p class="recover">
+                <a href="#">نسيت كلمة المرور؟</a>
+            </p>
+            <button class="btn gradient-btn" id="submitSignIn">تسجيل الدخول</button>
+        </form>
+        <div class="divider">
+            <span>أو</span>
+        </div>
+        <div class="social-login">
+          <button class="social-btn google" id="google-signin-btn">تسجيل الدخول عبر جوجل</button>
+
+            <button class="social-btn facebook">
+                <i class="fab fa-facebook-f"></i>
+                دخول عبر فيسبوك
+            </button>
+        </div>
+        <div class="links">
+            <p>ليس لديك حساب؟</p>
+            <button id="signUpButton" class="text-btn">إنشاء حساب جديد</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+<script type="module">
+  // إعداد Firebase واستيراد الدوال
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+  import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // هنا يتم تعريف الكود الذي يقوم بإضافة مستمع الحدث
+    const firebaseConfig = {
+      apiKey: "AIzaSyAP0CrPZ5hq6QUh78lAaaTTReaBnzbeAWs",
+      authDomain: "test-fbc74.firebaseapp.com",
+      projectId: "test-fbc74",
+      storageBucket: "test-fbc74.firebasestorage.app",
+      messagingSenderId: "1025394054184",
+      appId: "1:1025394054184:web:062f07a7395929305e111d"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    const signInWithGoogle = () => {
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          const user = result.user;
+          console.log("تم تسجيل الدخول بنجاح:", user);
+          window.location.href = "homepage.html";
+        })
+        .catch((error) => {
+          console.error("حدث خطأ أثناء تسجيل الدخول:", error);
+        });
+    };
+
+    const btn = document.getElementById("google-signin-btn");
+    if (btn) {
+      btn.addEventListener("click", signInWithGoogle);
+    } else {
+      console.error("لم يتم العثور على الزر بمعرف google-signin-btn");
+    }
+  });
+</script>
+    
+</body>
+</html>
